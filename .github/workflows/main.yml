@@ -1,15 +1,14 @@
 
 name: Hourly Crypto Tech Finance News
 
-on:
+'on':
   schedule:
-    - cron: "0 * * * *"
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
   send-news:
     runs-on: ubuntu-latest
-
     steps:
       - name: Get the code
         uses: actions/checkout@v4
@@ -17,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install packages
         run: pip install feedparser requests google-genai
